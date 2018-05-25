@@ -29,7 +29,9 @@ class Application
         end
     end
 
-    if req.path.match(/add/)
+    if req.path.match(/add/)      
+        search_term = req.params["item"]
+        resp.write handle_search(search_term)
     end
 
     resp.finish
